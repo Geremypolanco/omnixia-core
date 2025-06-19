@@ -1,14 +1,25 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>OMNIXIA CORE Unlimited</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <h1>🧠 OMNIXIA CORE Unlimited</h1>
-  <p>Welcome, Geremy. Ready for command input below.</p>
-  <div id="console"></div>
-  <input type="text" id="command" placeholder="Enter command..." />
+  <div id="terminal">
+    <div class="header">
+      <span class="logo">🧠</span>
+      <span class="title">OMNIXIA CORE <strong>Unlimited</strong></span>
+    </div>
+    <div class="output" id="output">
+      <p class="green">Welcome, Geremy. Ready for command input below.</p>
+    </div>
+    <form id="command-form">
+      <input type="text" id="command-input" placeholder="Enter command..." autocomplete="off" />
+    </form>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
