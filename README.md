@@ -1,3 +1,3 @@
-# OMNIXIA CORE
+# OMNIXIA CORE UNLIMITED - Enhanced Version
 
-Interface frontend for OMNIXIA CORE (Private Assistant).
+With visual interface and command system.
