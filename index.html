@@ -1,7 +1,36 @@
+
 <!DOCTYPE html>
-<html>
-<head><title>OMNIXIA CORE</title></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>OMNIXIA CORE Unlimited</title>
+    <style>
+        body { background-color: black; color: lime; font-family: monospace; padding: 20px; }
+        h1 { color: #39FF14; }
+        input, button { padding: 10px; margin-top: 10px; width: 300px; background-color: black; color: lime; border: 1px solid lime; }
+        #response { margin-top: 20px; white-space: pre-wrap; }
+    </style>
+</head>
 <body>
-<h1>OMNIXIA CORE Unlimited is Live</h1>
+    <h1>🧠 OMNIXIA CORE Unlimited</h1>
+    <p>Welcome, Geremy. Ready for input. Awaiting command...</p>
+    <input id="userInput" placeholder="Enter your message..." />
+    <button onclick="send()">Enviar</button>
+    <div id="response"></div>
+    <script>
+        async function send() {
+            const input = document.getElementById("userInput").value;
+            const resBox = document.getElementById("response");
+            resBox.innerHTML = "Procesando...";
+            const res = await fetch("/api/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: input })
+            });
+            const data = await res.json();
+            resBox.innerHTML = data.reply || "Sin respuesta.";
+        }
+    </script>
 </body>
 </html>
