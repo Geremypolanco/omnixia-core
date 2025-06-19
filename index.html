@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OMNIXIA CORE</title>
+  <style>
+    body { margin: 0; font-family: sans-serif; background: #000; color: #0f0; display: flex; align-items: center; justify-content: center; height: 100vh; }
+    #app { width: 90vw; height: 90vh; border: 2px solid #0f0; padding: 1rem; overflow-y: auto; }
+    .msg { margin-bottom: 1rem; }
+    .msg.user { color: #0ff; }
+    .msg.ai { color: #0f0; }
+    input { width: 100%; padding: 0.5rem; background: #111; color: #0f0; border: 1px solid #0f0; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="msg ai">👋 Welcome to OMNIXIA CORE, Geremy. I'm fully operational. Type your command below.</div>
+  </div>
+  <input type="text" placeholder="Enter command..." onkeydown="handleInput(event)" />
+  <script>
+    const app = document.getElementById('app');
+    function handleInput(e) {
+      if (e.key === 'Enter') {
+        const input = e.target.value;
+        if (!input.trim()) return;
+        const userMsg = document.createElement('div');
+        userMsg.className = 'msg user';
+        userMsg.textContent = '🧑‍💻 ' + input;
+        app.appendChild(userMsg);
+        const aiMsg = document.createElement('div');
+        aiMsg.className = 'msg ai';
+        aiMsg.textContent = '🤖 Executing: ' + input;
+        app.appendChild(aiMsg);
+        e.target.value = '';
+        app.scrollTop = app.scrollHeight;
+      }
+    }
+  </script>
+</body>
+</html>
