@@ -1,14 +1,1 @@
-[
-  {
-    "title": "Smart LED Light Bulb",
-    "description": "Voice-controlled, energy-saving smart bulb compatible with Alexa and Google Assistant.",
-    "price": 14.99,
-    "category": "Home Automation"
-  },
-  {
-    "title": "Portable Blender",
-    "description": "Rechargeable USB juicer with powerful motor, perfect for smoothies on the go.",
-    "price": 23.95,
-    "category": "Health & Wellness"
-  }
-]
+// Placeholder content for real-products.json
