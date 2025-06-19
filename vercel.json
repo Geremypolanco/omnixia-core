@@ -3,15 +3,11 @@
   "version": 2,
   "name": "omnixia-core-unlimited",
   "builds": [
-    {
-      "src": "index.html",
-      "use": "@vercel/static"
-    }
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "api/chat.js", "use": "@vercel/node" }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+    { "src": "/api/chat", "dest": "/api/chat.js" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }

@@ -1,14 +1,26 @@
 
-const form = document.getElementById("command-form");
-const input = document.getElementById("command-input");
-const output = document.getElementById("output");
+document.getElementById("chat-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const input = document.getElementById("user-input");
+    const message = input.value;
+    if (!message) return;
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  const command = input.value.trim();
-  if (command !== "") {
-    output.innerHTML += `<p>> ${command}</p><p>⏳ Comando recibido. Procesando...</p>`;
+    appendMessage("Tú", message);
     input.value = "";
-    output.scrollTop = output.scrollHeight;
-  }
+
+    const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message })
+    });
+    const data = await res.json();
+    appendMessage("OMNIXIA", data.response);
 });
+
+function appendMessage(sender, message) {
+    const messages = document.getElementById("messages");
+    const msg = document.createElement("div");
+    msg.innerHTML = `<strong>${sender}:</strong> ${message}`;
+    messages.appendChild(msg);
+    messages.scrollTop = messages.scrollHeight;
+}

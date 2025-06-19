@@ -2,24 +2,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OMNIXIA CORE Unlimited</title>
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <title>OMNIXIA CORE Unlimited</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="terminal">
-    <div class="header">
-      <span class="logo">🧠</span>
-      <span class="title">OMNIXIA CORE <strong>Unlimited</strong></span>
+    <div id="chat-container">
+        <div id="messages"></div>
+        <form id="chat-form">
+            <input type="text" id="user-input" autocomplete="off" placeholder="Escribe tu mensaje..." required />
+            <button type="submit">Enviar</button>
+        </form>
     </div>
-    <div class="output" id="output">
-      <p class="green">Welcome, Geremy. Ready for command input below.</p>
-    </div>
-    <form id="command-form">
-      <input type="text" id="command-input" placeholder="Enter command..." autocomplete="off" />
-    </form>
-  </div>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
