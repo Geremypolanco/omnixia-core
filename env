@@ -1,0 +1,11 @@
+# OpenAI API Key
+OPENAI_API_KEY=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
+
+# Shopify API Key
+SHOPIFY_API_KEY=3ba507e4fe5f48d705736fbf2771f75d
+
+# Stripe API Key
+STRIPE_API_KEY=<TU_CLAVE_STRIPE_AQUI>  # Reemplaza esto con tu clave real si la tienes
+
+# Modo producción
+NODE_ENV=production
