@@ -1,0 +1,1 @@
+console.log('OMNIXIA CORE Loaded');
