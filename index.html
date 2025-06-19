@@ -1,36 +1,46 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>OMNIXIA CORE Unlimited</title>
-    <style>
-        body { background-color: black; color: lime; font-family: monospace; padding: 20px; }
-        h1 { color: #39FF14; }
-        input, button { padding: 10px; margin-top: 10px; width: 300px; background-color: black; color: lime; border: 1px solid lime; }
-        #response { margin-top: 20px; white-space: pre-wrap; }
-    </style>
+  <meta charset="UTF-8">
+  <title>OMNIXIA CORE Unlimited</title>
+  <style>
+    body { background-color: black; color: lime; font-family: monospace; padding: 20px; }
+    .title { font-size: 28px; font-weight: bold; margin-bottom: 20px; }
+    .input-group { margin-top: 20px; display: flex; gap: 10px; }
+    input[type="text"] { flex: 1; padding: 10px; background: black; border: 1px solid lime; color: lime; }
+    button { padding: 10px 20px; background: black; color: lime; border: 1px solid lime; cursor: pointer; }
+    #output { margin-top: 20px; white-space: pre-wrap; }
+  </style>
 </head>
 <body>
-    <h1>🧠 OMNIXIA CORE Unlimited</h1>
-    <p>Welcome, Geremy. Ready for input. Awaiting command...</p>
-    <input id="userInput" placeholder="Enter your message..." />
-    <button onclick="send()">Enviar</button>
-    <div id="response"></div>
-    <script>
-        async function send() {
-            const input = document.getElementById("userInput").value;
-            const resBox = document.getElementById("response");
-            resBox.innerHTML = "Procesando...";
-            const res = await fetch("/api/chat", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ message: input })
-            });
-            const data = await res.json();
-            resBox.innerHTML = data.reply || "Sin respuesta.";
-        }
-    </script>
+  <div class="title">🧠 OMNIXIA CORE Unlimited</div>
+  <div>Welcome, Geremy. Ready for input. Awaiting command...</div>
+  <div class="input-group">
+    <input type="text" id="userInput" placeholder="Enter command...">
+    <button onclick="sendCommand()">Enviar</button>
+  </div>
+  <div id="output"></div>
+
+  <script>
+    async function sendCommand() {
+      const input = document.getElementById("userInput").value;
+      const output = document.getElementById("output");
+      output.textContent = "Procesando...";
+
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt: input })
+      });
+
+      if (!res.ok) {
+        output.textContent = "❌ Error procesando la solicitud.";
+        return;
+      }
+
+      const data = await res.json();
+      output.textContent = data.reply || "❌ No response.";
+    }
+  </script>
 </body>
 </html>
