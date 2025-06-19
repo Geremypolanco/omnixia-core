@@ -1,3 +1,3 @@
-# OMNIXIA CORE UNLIMITED - Enhanced Version
+# OMNIXIA CORE Unlimited
 
-With visual interface and command system.
+Clean deployment without exposing secrets.
