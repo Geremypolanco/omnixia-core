@@ -38,4 +38,3 @@ async function loadTrainingData() {
 
 // Ejecutar al iniciar
 loadTrainingData();
-console.log('OMNIXIA CORE Loaded');
