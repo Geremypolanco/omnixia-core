@@ -1,1 +1,4 @@
-// Placeholder content for real-products.json
+[
+  {"title": "Eco Smart Water Bottle", "price": 19.99, "description": "Keeps drinks cold for 24h."},
+  {"title": "AI Crypto Bot", "price": 49.00, "description": "Automated cryptocurrency trading bot."}
+]
