@@ -1,21 +1,20 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>OMNIXIA CORE Unlimited</title>
-    <style>
-        body { background-color: black; color: lime; font-family: monospace; display: flex; flex-direction: column; align-items: center; padding-top: 50px; }
-        input, button { background: black; border: 1px solid lime; color: lime; padding: 10px; margin: 10px; width: 300px; }
-        #response { margin-top: 20px; white-space: pre-wrap; color: white; }
-    </style>
+  <meta charset="UTF-8">
+  <title>OMNIXIA CORE Unlimited</title>
+  <style>
+    body { background-color: black; color: lime; font-family: monospace; text-align: center; padding: 40px; }
+    input, button { padding: 10px; font-size: 1rem; }
+    #response-box { margin-top: 20px; white-space: pre-line; }
+  </style>
 </head>
 <body>
-    <h1>🧠 OMNIXIA CORE Unlimited</h1>
-    <p>Welcome, Geremy. Ready for input. Awaiting command...</p>
-    <input id="user-input" type="text" placeholder="Enter your command..." />
-    <button onclick="sendMessage()">Enviar</button>
-    <div id="response">Procesando...</div>
-    <script src="script.js"></script>
+  <h1>🧠 OMNIXIA CORE Unlimited</h1>
+  <p>Welcome, Geremy. Ready for input. Awaiting command...</p>
+  <input type="text" id="user-input" placeholder="Hello" />
+  <button onclick="sendMessage()">Enviar</button>
+  <div id="response-box">...</div>
+  <script src="script.js"></script>
 </body>
 </html>
