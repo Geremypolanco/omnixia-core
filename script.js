@@ -1,7 +1,8 @@
+
 async function sendMessage() {
-    const input = document.getElementById("input").value;
-    const output = document.getElementById("output");
-    output.textContent = "Procesando...";
+    const input = document.getElementById("user-input").value;
+    const responseBox = document.getElementById("response");
+    responseBox.innerText = "Procesando...";
 
     try {
         const res = await fetch("/api/chat", {
@@ -10,8 +11,8 @@ async function sendMessage() {
             body: JSON.stringify({ message: input })
         });
         const data = await res.json();
-        output.textContent = data.reply || "Sin respuesta.";
+        responseBox.innerText = data.reply || "Sin respuesta.";
     } catch (err) {
-        output.textContent = "Error: " + err.message;
+        responseBox.innerText = "❌ Error al conectar con la IA.";
     }
 }

@@ -2,15 +2,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
     <title>OMNIXIA CORE Unlimited</title>
+    <style>
+        body { background-color: black; color: lime; font-family: monospace; display: flex; flex-direction: column; align-items: center; padding-top: 50px; }
+        input, button { background: black; border: 1px solid lime; color: lime; padding: 10px; margin: 10px; width: 300px; }
+        #response { margin-top: 20px; white-space: pre-wrap; color: white; }
+    </style>
 </head>
 <body>
-    <h1>OMNIXIA CORE Unlimited</h1>
-    <div id="chatbox"></div>
-    <input type="text" id="userInput" placeholder="Escribe aquí..." />
+    <h1>🧠 OMNIXIA CORE Unlimited</h1>
+    <p>Welcome, Geremy. Ready for input. Awaiting command...</p>
+    <input id="user-input" type="text" placeholder="Enter your command..." />
     <button onclick="sendMessage()">Enviar</button>
-    <script src="app.js"></script>
+    <div id="response">Procesando...</div>
+    <script src="script.js"></script>
 </body>
 </html>
