@@ -2,21 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>🧠 OMNIXIA CORE Unlimited</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="chat-container">
-    <h1>🧠 OMNIXIA CORE <strong>Unlimited</strong></h1>
-    <p>Welcome, Geremy. Ready for input. Awaiting command...</p>
-    <div id="messages"></div>
-    <form id="chat-form">
-      <input type="text" id="user-input" placeholder="Enter command..." required />
-      <button type="submit">Enviar</button>
-    </form>
-    <div class="response" id="response-box">...</div>
-  </div>
+  <h1>🧠 OMNIXIA CORE <strong>Unlimited</strong></h1>
+  <p>Welcome, Geremy. Ready for input. Awaiting command...</p>
+  <form onsubmit="sendMessage(event)">
+    <input type="text" id="user-input" placeholder="Enter command..." required />
+    <button type="submit">Enviar</button>
+  </form>
+  <div class="response" id="response-box">...</div>
   <script src="script.js"></script>
 </body>
 </html>
