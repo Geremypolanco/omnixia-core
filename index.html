@@ -1,25 +1,21 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>OMNIXIA CORE Unlimited</title>
-  <style>
-    body { background: black; color: lime; font-family: monospace; padding: 20px; }
-    .response { white-space: pre-wrap; margin-top: 10px; }
-    input, button {
-      background: black; color: lime; border: 1px solid lime; padding: 10px;
-      font-size: 16px; margin: 5px 0;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🧠 OMNIXIA CORE <strong>Unlimited</strong></h1>
-  <p>Welcome, Geremy. Ready for input. Awaiting command...</p>
-  <form onsubmit="sendMessage(event)">
-    <input type="text" id="user-input" placeholder="Enter command..." required>
-    <button type="submit">Enviar</button>
-  </form>
-  <div class="response" id="response-box">...</div>
+  <div id="chat-container">
+    <h1>🧠 OMNIXIA CORE <strong>Unlimited</strong></h1>
+    <div id="messages"></div>
+    <form id="chat-form">
+      <input type="text" id="user-input" placeholder="Enter command..." autocomplete="off" />
+      <button type="submit">Enviar</button>
+    </form>
+    <div id="response-box"></div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
