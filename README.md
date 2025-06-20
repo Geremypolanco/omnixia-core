@@ -1,3 +1,2 @@
-# OMNIXIA CORE Unlimited
-
-Clean deployment without exposing secrets.
+# OMNIXIA CORE
+Fully operational core version.
