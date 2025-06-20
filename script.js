@@ -1,21 +1,22 @@
-document.getElementById("chat-form").addEventListener("submit", async function(e) {
+document.getElementById("chat-form").addEventListener("submit", sendMessage);
+
+async function sendMessage(e) {
   e.preventDefault();
   const input = document.getElementById("user-input");
-  const responseBox = document.getElementById("messages");
+  const responseBox = document.getElementById("response-box");
   const prompt = input.value.trim();
   input.value = "";
-  responseBox.innerText += "\n🧍 " + prompt + "\n";
+  responseBox.innerText = "Procesando...";
+
   try {
     const res = await fetch("/api/chat", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ prompt })
     });
     const data = await res.json();
-    responseBox.innerText += "\n🤖 " + (data.reply || "No response");
+    responseBox.innerText = data.reply || "Sin respuesta";
   } catch (err) {
-    responseBox.innerText += "\n❌ Error al conectar con OMNIXIA";
+    responseBox.innerText = "❌ Error al conectar con OMNIXIA";
   }
-});
+}
