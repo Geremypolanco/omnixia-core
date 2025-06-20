@@ -4,17 +4,22 @@
   <meta charset="UTF-8">
   <title>OMNIXIA CORE Unlimited</title>
   <style>
-    body { background-color: black; color: lime; font-family: monospace; text-align: center; padding: 40px; }
-    input, button { padding: 10px; font-size: 1rem; }
-    #response-box { margin-top: 20px; white-space: pre-line; }
+    body { background: black; color: lime; font-family: monospace; padding: 20px; }
+    .response { white-space: pre-wrap; margin-top: 10px; }
+    input, button {
+      background: black; color: lime; border: 1px solid lime; padding: 10px;
+      font-size: 16px; margin: 5px 0;
+    }
   </style>
 </head>
 <body>
-  <h1>🧠 OMNIXIA CORE Unlimited</h1>
+  <h1>🧠 OMNIXIA CORE <strong>Unlimited</strong></h1>
   <p>Welcome, Geremy. Ready for input. Awaiting command...</p>
-  <input type="text" id="user-input" placeholder="Hello" />
-  <button onclick="sendMessage()">Enviar</button>
-  <div id="response-box">...</div>
+  <form onsubmit="sendMessage(event)">
+    <input type="text" id="user-input" placeholder="Enter command..." required>
+    <button type="submit">Enviar</button>
+  </form>
+  <div class="response" id="response-box">...</div>
   <script src="script.js"></script>
 </body>
 </html>
