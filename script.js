@@ -1,24 +1,21 @@
-console.log('Ready to chat');
-async function sendMessage(e) {
+document.getElementById("chat-form").addEventListener("submit", async function(e) {
   e.preventDefault();
   const input = document.getElementById("user-input");
-  const responseBox = document.getElementById("chatbox");
+  const responseBox = document.getElementById("messages");
   const prompt = input.value.trim();
   input.value = "";
-  responseBox.innerHTML += `<div><b>Tú:</b> ${prompt}</div>`;
-
+  responseBox.innerText += "\n🧍 " + prompt + "\n";
   try {
     const res = await fetch("/api/chat", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({ prompt })
     });
-
     const data = await res.json();
-    responseBox.innerHTML += `<div><b>OMNIXIA:</b> ${data.reply}</div>`;
-  } catch (error) {
-    responseBox.innerHTML += `<div style="color:red;">⚠️ Error al conectar con OMNIXIA</div>`;
+    responseBox.innerText += "\n🤖 " + (data.reply || "No response");
+  } catch (err) {
+    responseBox.innerText += "\n❌ Error al conectar con OMNIXIA";
   }
-}
+});
