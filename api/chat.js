@@ -19,6 +19,7 @@ export default async function handler(req, res) {
     const reply = result.choices?.[0]?.message?.content;
     res.status(200).json({ reply });
   } catch (error) {
-    res.status(500).json({ reply: "⚠️ OMNIXIA tuvo un error al procesar tu solicitud." });
+    console.error("API:", error);
+    res.status(500).json({ reply: "⚠️ OMNIXIA tuvo un error interno." });
   }
 }
