@@ -7,18 +7,18 @@ export default async function handler(req, res) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${apiKey}`,
+        "Authorization": `Bearer ${apiKey}`
       },
       body: JSON.stringify({
         model: "gpt-4",
-        messages: [{ role: "user", content: prompt }],
-      }),
+        messages: [{ role: "user", content: prompt }]
+      })
     });
 
     const result = await openaiRes.json();
-    const reply = result.choices?.[0]?.message?.content;
+    const reply = result.choices?.[0]?.message?.content || "Sin respuesta";
     res.status(200).json({ reply });
   } catch (error) {
-    res.status(500).json({ reply: "⚠️ OMNIXIA tuvo un error al procesar tu mensaje." });
+    res.status(500).json({ reply: "⚠️ OMNIXIA tuvo un error interno." });
   }
 }
