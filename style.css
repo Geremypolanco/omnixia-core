@@ -1,34 +1,27 @@
----
-
-## 🎨 OPCIONAL: Mejora visual estilo ChatGPT (burbuja de conversación)
-
-Actualiza `style.css` con este nuevo diseño:
-
-```css
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #0d1117;
-  color: #c9d1d9;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
+  background: black;
+  color: lime;
+  font-family: 'Courier New', monospace;
+  padding: 2rem;
 }
-#chat-container {
-  width: 90%;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
+
+h1 {
+  color: lime;
 }
-#messages {
-  padding: 1rem;
-  height: 400px;
-  overflow-y: auto;
-  background: #161b22;
-  margin-bottom: 1rem;
-  border-radius: 8px;
+
+input, button {
+  background: black;
+  color: lime;
+  border: 1px solid lime;
+  font-size: 16px;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.response {
+  white-space: pre-wrap;
+  margin-top: 10px;
+}
 }
 .message {
   margin: 0.5rem 0;
