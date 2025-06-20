@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>🧠 OMNIXIA CORE Unlimited</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <h1>🧠 OMNIXIA CORE <strong>Unlimited</strong></h1>
-  <p>Welcome, Geremy. Ready for input. Awaiting command...</p>
-  <form onsubmit="sendMessage(event)">
-    <input type="text" id="user-input" placeholder="Enter command..." required />
-    <button type="submit">Enviar</button>
-  </form>
-  <div class="response" id="response-box">...</div>
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OMNIXIA CORE Unlimited</title>
+  </head>
+  <body>
+    <h1>Welcome to OMNIXIA CORE Unlimited</h1>
+    <div id="chat-box"></div>
+    <form id="chat-form">
+      <input type="text" id="user-input" placeholder="Type a message..." required />
+      <button type="submit">Send</button>
+    </form>
+
+    <script src="main.js"></script>
+  </body>
 </html>
