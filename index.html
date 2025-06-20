@@ -2,75 +2,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OMNIXIA CORE Unlimited</title>
-  <style>
-    body {
-      background-color: black;
-      color: lime;
-      font-family: monospace;
-      padding: 20px;
-    }
-    #log {
-      border: 1px solid lime;
-      padding: 15px;
-      height: 400px;
-      overflow-y: auto;
-      margin-bottom: 15px;
-      white-space: pre-line;
-    }
-    input, button {
-      font-family: monospace;
-      background: black;
-      color: lime;
-      border: 1px solid lime;
-      padding: 10px;
-    }
-    select {
-      background-color: black;
-      color: lime;
-      border: 1px solid lime;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMNIXIA CORE Unlimited</title>
 </head>
 <body>
-  <h1>🧠 OMNIXIA CORE <strong>Unlimited</strong></h1>
-  <p>Welcome, Geremy. You may begin typing your commands. 🌐</p>
-  <div id="log">[System] Ready...</div>
-  <form id="chat-form">
-    <input id="user-input" placeholder="Type your command here..." />
-    <button type="submit">Send</button>
-    <select id="lang">
-      <option value="en">🇺🇸 English</option>
-      <option value="es">🇪🇸 Español</option>
-    </select>
-  </form>
-
-  <script>
-    const form = document.getElementById("chat-form");
-    const log = document.getElementById("log");
-    const input = document.getElementById("user-input");
-    const lang = document.getElementById("lang");
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const message = input.value.trim();
-      if (!message) return;
-      log.innerText += `
-> ${message}`;
-      input.value = "";
-      const res = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt: message, lang: lang.value }),
-      });
-      const data = await res.json();
-      log.innerText += `
-🤖 ${data.response}
-`;
-      log.scrollTop = log.scrollHeight;
-    });
-  </script>
+    <h1>OMNIXIA CORE Unlimited</h1>
+    <div id="chatbox"></div>
+    <input type="text" id="userInput" placeholder="Escribe aquí..." />
+    <button onclick="sendMessage()">Enviar</button>
+    <script src="app.js"></script>
 </body>
 </html>
