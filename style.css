@@ -1,0 +1,43 @@
+body {
+  background-color: #000;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  padding: 20px;
+  max-width: 400px;
+  margin: 60px auto;
+  background-color: #111;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #0ff;
+}
+.highlight {
+  color: cyan;
+}
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  font-size: 1em;
+  margin-top: 10px;
+}
+button {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  background-color: cyan;
+  border: none;
+  color: black;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.response {
+  background-color: #222;
+  margin-top: 20px;
+  padding: 10px;
+  border-left: 3px solid cyan;
+  white-space: pre-wrap;
+}
